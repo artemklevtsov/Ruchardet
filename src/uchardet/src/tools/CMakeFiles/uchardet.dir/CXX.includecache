@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xxx/projects/R/packages/Ruchardet/src/uchardet/src/tools/uchardet.cpp
+../uchardet.h
+/home/xxx/projects/R/packages/Ruchardet/src/uchardet/src/uchardet.h
+cstdio
+-
+cstring
+-
+cstdlib
+-
+getopt.h
+-
+iostream
+-
+stdio.h
+-
+
+/home/xxx/projects/R/packages/Ruchardet/src/uchardet/src/uchardet.h
+stddef.h
+-
+

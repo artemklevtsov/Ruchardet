@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG  -rdynamic CMakeFiles/uchardet-tests.dir/uchardet-tests.c.o  -o uchardet-tests -Wl,-rpath,/home/xxx/projects/R/packages/Ruchardet/src/uchardet/src ../src/libuchardet.so.0.0.6 

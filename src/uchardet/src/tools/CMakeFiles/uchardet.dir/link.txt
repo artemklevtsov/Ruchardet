@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/uchardet.dir/uchardet.cpp.o  -o uchardet -Wl,-rpath,/home/xxx/projects/R/packages/Ruchardet/src/uchardet/src: ../libuchardet.so.0.0.6 

@@ -10,7 +10,7 @@ detectEncoding(str)
 \item{str}{Character vector.}
 }
 \value{
-Character vector with encoding names.
+Character vector with encoding names. For the unknown encodings return NAs.
 }
 \description{
 Detect encoding of input string

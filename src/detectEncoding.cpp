@@ -5,7 +5,7 @@ using namespace Rcpp;
 
 //' Detect encoding of input string
 //' @param str Character vector.
-//' @return Character vector with encoding names.
+//' @return Character vector with encoding names. For the unknown encodings return NAs.
 //' @references \url{https://www.freedesktop.org/wiki/Software/uchardet/}
 //' @export
 //' @useDynLib Ruchardet
@@ -13,7 +13,7 @@ using namespace Rcpp;
 // [[Rcpp::export]]
 CharacterVector detectEncoding(const CharacterVector& str) {
     R_xlen_t n = str.size();
-    CharacterVector res(n);
+    CharacterVector res = no_init(n);
     uchardet_t handle = uchardet_new();
 
     for (R_xlen_t i = 0; i < n; ++i) {

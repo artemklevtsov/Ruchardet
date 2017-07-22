@@ -3,7 +3,7 @@
 
 #' Detect encoding of input string
 #' @param str Character vector.
-#' @return Character vector with encoding names.
+#' @return Character vector with encoding names. For the unknown encodings return NAs.
 #' @references \url{https://www.freedesktop.org/wiki/Software/uchardet/}
 #' @export
 #' @useDynLib Ruchardet

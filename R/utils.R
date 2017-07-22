@@ -22,7 +22,7 @@ detectFileEncoding <- function(file, n = -1L, default = getOption("encoding")) {
     txt <- paste0(readLines(file, warn = FALSE, n = n), collapse = "")
     enc <- detectEncoding(txt)
 
-    if (enc == ""){
+    if (enc == "") {
         warning("can't expect encoding, will return 'default' encoding")
         enc <- default
     }

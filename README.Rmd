@@ -1,17 +1,37 @@
-Ruchardet
-=========
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>",
+    fig.path = "README-"
+)
+options(width = 120L)
+```
+
+# Ruchardet
 
 An R bindings of the [uchardet](https://www.freedesktop.org/wiki/Software/uchardet/) library. 
 
-### Install 
+## Installation
 
-```{r init, eval=FALSE}
-library(devtools)
+To install the package from the CRAN run the following command:
 
-install_github('Ruchardet', 'haven-jeon')
+```r
+install.packages("Ruchardet", repos = "https://cloud.r-project.org/")
 ```
 
-### Example
+To install the development version from git repository the `install_github()` function from `devtools` package can be used:
+
+```r
+devtools::install_github('Ruchardet', 'haven-jeon')
+```
+
+## Usage
 
 ```{r example}
 library(Ruchardet, quietly = TRUE)
@@ -30,4 +50,12 @@ detectFileEncoding(tmp)
 # URL encoding detection 
 detectFileEncoding('http://www.ppomppu.co.kr/')
 detectFileEncoding('http://freesearch.pe.kr')
+```
+
+## Bug reports
+
+Use the following command to go to the page for bug report submissions:
+
+```r
+bug.report(package = "benchr")
 ```

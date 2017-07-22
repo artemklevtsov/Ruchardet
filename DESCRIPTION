@@ -1,7 +1,7 @@
 Package: Ruchardet
 Type: Package
 Title: R package to detect character encoding
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person("Heewon", "Jeon", role = c("aut", "cre"),
            email = "madjakarta@gmail.com"),

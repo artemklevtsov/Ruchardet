@@ -4,7 +4,7 @@
 \alias{detectFileEncoding}
 \title{detect file encoding for inputted file}
 \usage{
-detectFileEncoding(file, n = -1, default = getOption("encoding"))
+detectFileEncoding(file, n = -1L, default = getOption("encoding"))
 }
 \arguments{
 \item{file}{to read from, or a \code{\link{connection}} which will be opened if necessary, and if so closed at the end of the function call.}

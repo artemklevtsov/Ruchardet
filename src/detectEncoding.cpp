@@ -4,32 +4,29 @@
 
 using namespace Rcpp;
 
-
-
-
-//' detect encoding of input string
-//' @param str input string
-//' @return encoding name
-//' @references \url{https://code.google.com/p/uchardet/}
+//' Detect encoding of input string
+//' @param str Character vector.
+//' @return Character vector with encoding names.
+//' @references \url{https://www.freedesktop.org/wiki/Software/uchardet/}
 //' @export
 //' @useDynLib Ruchardet
+//' @importFrom Rcpp sourceCpp
 // [[Rcpp::export]]
-CharacterVector detectEncoding(StringVector str){
-  int inputsize = str.size();
-
-  uchardet_t encoding_detector = uchardet_new();
-  
-  CharacterVector ouputs(inputsize);
-
-  for(int i = 0; i< inputsize; i++){  
-    uchardet_handle_data(encoding_detector, str[i], strlen(str[i]));  
-    uchardet_data_end(encoding_detector);
-    ouputs[i]  = uchardet_get_charset(encoding_detector);
-    uchardet_reset(encoding_detector);
-  }
-  uchardet_delete(encoding_detector);
-
-  return ouputs;
-} 
-
-
+CharacterVector detectEncoding(const CharacterVector& str) {
+    R_xlen_t n = str.size();
+    
+    uchardet_t handle = uchardet_new();
+    
+    CharacterVector res = no_init(n);
+    
+    for (R_xlen_t i = 0; i < n; ++i) {
+        uchardet_handle_data(handle, str[i], strlen(str[i]));
+        uchardet_data_end(handle);
+        res[i]  = uchardet_get_charset(handle);
+        uchardet_reset(handle);
+    }
+    
+    uchardet_delete(handle);
+    
+    return res;
+}

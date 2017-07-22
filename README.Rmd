@@ -1,7 +1,7 @@
 Ruchardet
 =========
 
-An R port of http://code.google.com/p/uchardet/ library 
+An R bindings of the [uchardet](https://www.freedesktop.org/wiki/Software/uchardet/) library. 
 
 ### Install 
 
@@ -10,7 +10,6 @@ library(devtools)
 
 install_github('Ruchardet', 'haven-jeon')
 ```
-
 
 ### Example
 
@@ -23,13 +22,12 @@ benc
 nme <- iconv(nm, benc, "CP949")
 detectEncoding(c(nm, nme))
 
-#detection of unknown file encoding
-unknown <- file.path(system.file("tests",package="Ruchardet"),"shift_jis.txt")
-read.table(unknown, fileEncoding=detectFileEncoding(unknown))
+# Detection of unknown file encoding
+tmp <- tempfile()
+writeLines(nme, tmp)
+detectFileEncoding(tmp)
 
-
-#URL encoding detection 
+# URL encoding detection 
 detectFileEncoding('http://www.ppomppu.co.kr/')
 detectFileEncoding('http://freesearch.pe.kr')
-
 ```

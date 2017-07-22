@@ -4,20 +4,23 @@
 #' @param default default encoding if fail to expect.
 #' @return encoding name
 #' @export 
-detectFileEncoding <- function(file, n = -1, default = getOption("encoding")) {
+detectFileEncoding <- function(file, n = -1L, default = getOption("encoding")) {
+    stopifnot(length(file) == 1L)
+
     if (is.character(file)) {
         file <- file(file, "rt")
         on.exit(close(file))
     }
     if (!inherits(file, "connection")) 
         stop("'file' must be a character string or connection")
-    
+
     if (!isOpen(file, "rt")) {
         open(file, "rt")
         on.exit(close(file))
     }
 
-    enc <- detectEncoding(paste0(readLines(file, warn = FALSE, n = n), collapse = ""))
+    txt <- paste0(readLines(file, warn = FALSE, n = n), collapse = "")
+    enc <- detectEncoding(txt)
 
     if (enc == ""){
         warning("can't expect encoding, will return 'default' encoding")

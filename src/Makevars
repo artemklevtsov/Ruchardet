@@ -4,6 +4,8 @@ PKG_LIBS = -L./uchardet/src -luchardet
 $(SHLIB): libuchardet.a
 
 libuchardet.a:
-	( cd ./uchardet; \
-	  cmake .; \
-	  $(MAKE)  CXX="$(CXX)" CXXFLAGS="$(CXXFLAGS) $(CXXPICFLAGS)" AR="$(AR)" RANLIB="$(RANLIB)" )
+	( mkdir -p ./uchardet/build; \
+	  cd ./uchardet/build; \
+	  cmake ..; \
+	  cd ./src; \
+	  $(MAKE)  CXX="$(CXX)" CXXFLAGS="$(CXXFLAGS) $(CXXPICFLAGS)" AR="$(AR)" RANLIB="$(RANLIB)"; )

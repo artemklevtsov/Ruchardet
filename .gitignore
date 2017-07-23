@@ -10,3 +10,4 @@ vignettes/*.pdf
 *.swp
 Rplots.pdf
 inst/doc
+src/uchardet/build

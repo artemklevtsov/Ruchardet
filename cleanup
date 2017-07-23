@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -f src/*.so src/*.o src/*.dll src/*.a
+rm -rf src/uchardet/build

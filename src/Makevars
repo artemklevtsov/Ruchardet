@@ -5,5 +5,5 @@ $(SHLIB): libuchardet.a
 
 libuchardet.a:
 	( cd ./uchardet; \
-	  cmake -DCMAKE_BUILD_TYPE=Release; \
+	  cmake .; \
 	  $(MAKE)  CXX="$(CXX)" CXXFLAGS="$(CXXFLAGS) $(CXXPICFLAGS)" AR="$(AR)" RANLIB="$(RANLIB)" )

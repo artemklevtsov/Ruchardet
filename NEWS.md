@@ -3,10 +3,11 @@
 ## Additions
 
 * Update `uchardet` library to 0.0.6.
-* Now `detectEncoding` hanldes `NA` values.
+* Now `detectEncoding` handles `NA` values.
 * Now `detectEncoding` return `NA` when `uchardet` can't detect encoding.
+* Now `detectEncoding` keep names attribute.
 
-# Ruchardet 0.0-3
+# Ruchardet 0.0-3   
 
 ## Fixes
 

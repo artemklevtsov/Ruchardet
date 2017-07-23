@@ -6,7 +6,7 @@
 #' @return Character vector with encoding names. For the unknown encodings return NAs.
 #' @references \url{https://www.freedesktop.org/wiki/Software/uchardet/}
 #' @export
-#' @useDynLib Ruchardet
+#' @useDynLib Ruchardet, .registration = TRUE
 #' @importFrom Rcpp sourceCpp
 detectEncoding <- function(str) {
     .Call('_Ruchardet_detectEncoding', PACKAGE = 'Ruchardet', str)

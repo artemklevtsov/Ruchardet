@@ -8,7 +8,7 @@ using namespace Rcpp;
 //' @return Character vector with encoding names. For the unknown encodings return NAs.
 //' @references \url{https://www.freedesktop.org/wiki/Software/uchardet/}
 //' @export
-//' @useDynLib Ruchardet
+//' @useDynLib Ruchardet, .registration = TRUE
 //' @importFrom Rcpp sourceCpp
 // [[Rcpp::export]]
 CharacterVector detectEncoding(const CharacterVector& str) {
